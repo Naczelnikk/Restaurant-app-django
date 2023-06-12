@@ -3,14 +3,14 @@
 {% block body %}
  <div class="container">
         <div class="row">
-            <div class="col-md-4 offset-md-4">
+            <div class="col-md-4 offset-md-4 ">
                 <div class="card">
-                    <div class="card-header bg-info text-white">
+                    <div class="card-header text-white" style="background-color: #343A40">
                         <div class="card-title">
                             <h2>Add Item</h2>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body"  style="background-color: #9376E0">
                         <form method="POST">
                             {% csrf_token %}
                             <div class="form" style="color: black">
@@ -19,7 +19,7 @@
 
 
 
-                            <button class="btn-info" type="submit"> Dodaj </button>
+                            <button class="btn-info" style="background-color: #343A40" type="submit"> Add </button>
                                 </div>
                         </form>
                     </div>
