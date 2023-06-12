@@ -14,21 +14,33 @@
 <body>
 
         
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="{% url 'menu:index' %}" class="navbar-brand">Menu Restauracji</a>
+        <nav class="navbar navbar-dark" style="background-color: #9376E0">
+
+
+
+            <a href="{% url 'menu:index' %}" class="navbar-brand">Restaurant</a>
+
+
+
+
+
+
+        </li>
+
+
 
             <div class="navbar">
-
+                <form class="form-check-inline">
                     <a class="nav-item active nav-link text-white" href="{% url 'menu:create_item' %}"> Add item </a>
-                    <a class="nav-item active nav-link text-white" href="{% url 'register' %}"> Rejestracja </a>
+                    <a class="nav-item active nav-link text-white" href="{% url 'register' %}"> Register </a>
                     <a class="nav-item active nav-link text-white" href="http://127.0.0.1:8000/admin"> Admin </a>
                     {% if user.is_authenticated %}
-                        <a class="nav-item active nav-link text-bg-light" href="{% url 'logout' %}"> logout</a>
+                        <a class="nav-item active nav-link text-bg-light" href="{% url 'logout' %}"> Logout </a>
                         <a class="nav-item active nav-link text-bg-light" href="{% url 'profile' %}">Profile</a>
                     {% else %}
-                        <a class="nav-item active nav-link text-bg-light" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item active nav-link text-white" id="login" href="{% url 'login' %}">Login</a>
                     {% endif %}
-
+                </form>
             </div>
         </nav>
         {% if messages %}

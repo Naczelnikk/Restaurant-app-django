@@ -1,6 +1,60 @@
-<form method="POST">
+{% extends 'menu/base.html' %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    {% block body %}
+
+       <form method="POST">
     {% csrf_token %}
+           <div class="col-md-4 offset-md-5">
     <h2>Are you sure you want to delete {{ item.item_name }}</h2>
-    <button type="submit">Confirm</button>
+</div>
+           <div class="row">
+                <div class="col-md-3 offset-md-2">
+                    <img class="card" height="150px" src="{{ item.item_img }}"/>
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>{{ item.item_desc }}</h5>
+                    <h6>{{ item.item_price }} PLN</h6>
+                    <h6>Added by: {{ item.user_name }}</h6>
+                </div>
+           </div>
+    <button type="submit" class="btn btn-danger col-md-1 offset-md-5" id="del">Confirm</button>
 
 </form>
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
