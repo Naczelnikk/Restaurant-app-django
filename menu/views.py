@@ -15,9 +15,6 @@ class IndexClassView(ListView):
     template_name = 'menu/index.html'
     context_object_name = 'item_list'
 
-
-
-
 def items(request):
     return HttpResponse('Widok pozycji menu')
 
