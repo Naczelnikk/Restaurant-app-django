@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils.decorators import method_decorator
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ItemForm
 from .models import Item
 from django.template import loader
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -29,18 +34,20 @@ class FoodDetail(DetailView):
 
 
 def create_item(request):
-    form = ItemForm(request.POST or None)
 
-    if form.is_valid():
-        form.save()
-        return redirect('menu:index')
+        form = ItemForm(request.POST or None)
 
-    return render(request, 'menu/item-form.html', {'form':form})
+        if form.is_valid():
+            form.save()
+            return redirect('menu:index')
 
-class CreateItem(CreateView):
-    model = Item;
+        return render(request, 'menu/item-form.html', {'form':form})
+
+class CreateItem(LoginRequiredMixin ,CreateView):
+    model = Item
     fields = ['item_name', 'item_desc', 'item_price', 'item_img']
     template_name = 'menu/item-form.html'
+
 
     def form_valid(self, form):
         form.instance.user_name = self.request.user
