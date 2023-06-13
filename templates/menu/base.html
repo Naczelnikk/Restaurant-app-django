@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="{% static 'menu/style.css' %}">
 
+
+
     <title>Document</title>
 
 </head>
@@ -16,7 +18,11 @@
         
         <nav class="navbar navbar-dark" style="background-color: #9376E0">
 
-            <a href="{% url 'start' %}" class="navbar-brand">Restaurant</a>
+            <a href="{% url 'start' %}" class="navbar-brand">
+                <img id="logo" src="{% static 'menu/logo.png' %}">
+                Restaurant
+
+            </a>
 
 
             <div class="navbar">

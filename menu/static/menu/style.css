@@ -18,3 +18,7 @@ body{
 #del:hover{
     transform: scale(1.03);
 }
+#logo{
+    max-height: 90px;
+    max-width: 90px;
+}
