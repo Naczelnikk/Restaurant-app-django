@@ -54,7 +54,7 @@ class CreateItem(LoginRequiredMixin ,CreateView):
 
         return super().form_valid(form)
 
-
+@login_required
 def edit_item(request, id):
     item = Item.objects.get(id=id)
     form =  ItemForm(request.POST or None, instance=item)

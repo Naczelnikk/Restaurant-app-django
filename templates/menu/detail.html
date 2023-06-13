@@ -25,6 +25,7 @@
                     <h3>{{ object.item_price }} PLN</h3>
                     <a class="btn btn-danger" href="{% url 'menu:delete_item' item.id %}">Delete
                     </a>
+                    <a class="btn btn-info" href="{% url 'menu:edit_item' item.id %}">Edit</a>
                 </div>
             </div>
         </div>
