@@ -1,5 +1,25 @@
-<h1>You have been logged out</h1>
+{% extends 'menu/base.html' %}
 
- <a href="/food">
-    <button>Go back to main page</button>
-  </a>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+
+      <h1>You have been logged out</h1>
+
+      <a class="btn btn-outline-success" href="{% url 'start'%}">Go back to the main page
+                    </a>
+
+
+
+{% endblock %}
+</body>
+</html>
