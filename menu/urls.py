@@ -9,4 +9,5 @@ urlpatterns = [
     path('dodaj', views.CreateItem.as_view(), name='create_item'),
     path('edit/<int:id>/', views.edit_item, name='edit_item'),
     path('delete/<int:id>', views.delete_item, name='delete_item'),
+    path('location/', views.location, name='location'),
 ]

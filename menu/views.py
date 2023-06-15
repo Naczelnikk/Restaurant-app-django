@@ -73,4 +73,7 @@ def delete_item(request, id):
 
     return render(request, 'menu/item-delete.html', {'item':item})
 
+def location(request):
+    return render(request, 'menu/location.html')
+
 
