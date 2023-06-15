@@ -76,4 +76,7 @@ def delete_item(request, id):
 def location(request):
     return render(request, 'menu/location.html')
 
+def about(request):
+    return render(request, 'menu/about.html')
+
 
